@@ -1,0 +1,22 @@
+%YAML:1.0
+
+# Radius of biggest circle which can be detected
+maxRadius: 15
+# UpperLimit of trackbar for changing maxRadius
+maxRadiusUL: 20
+
+# Radius of smallest circle which can be detected
+minRadius: 3
+# UpperLimit of trackbar for changing minRadius
+minRadiusUL: 10
+
+# Upper threshold of internal edge detector
+edgeThreshold: 80
+# UpperLimit of trackbar for changing upperGradient
+edgeThresholdUL: 150
+# Threshold/intensity of center of circle
+centerThreshold: 8
+# Upper limit of trackbar for changing lowerGradient
+centerThresholdUL: 20
+# Min. possible distance between center of two circles
+centerDistance: 8

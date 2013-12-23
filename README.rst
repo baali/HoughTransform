@@ -1,8 +1,7 @@
 Overview
 --------
 
-Simple addon of UI to OpenCV's `Hough Circle Transform
-<http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/hough_circle/hough_circle.html>`
+Simple addon of UI to OpenCV's `Hough Circle Transform <http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/hough_circle/hough_circle.html>`_
 to detect circles(spores) in an image.
 
 Usage

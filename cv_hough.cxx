@@ -15,9 +15,14 @@ vector<Vec3f> circles;
 char* window_name = "Hough Circle Transform";
 
 /** @funtion to load config file */
-void load_config()
+int load_config()
 {
   FileStorage fs("param.yml", FileStorage::READ);
+  if( !fs.isOpened() )
+  {       
+      std::cout << "Parameter file missing.\n";
+      return -1; 
+  }
   maxRadius = (int)fs["maxRadius"];
   maxRadiusUL = (int)fs["maxRadiusUL"];
   minRadius = (int)fs["minRadius"];
@@ -28,6 +33,7 @@ void load_config()
   centerThresholdUL = (int)fs["centerThresholdUL"];
   centerDistance = (int)fs["centerDistance"];  
   fs.release();
+  return 0;
 }
 
 /** @funtion for changing any trackbar */
@@ -63,11 +69,17 @@ int main(int argc, char** argv)
   src = imread( argv[1], 1 );
 
   if( !src.data )
-    { return -1; }
+  {       
+      std::cout << "Not able to open Image file.\n";
+      return -1; 
+  }
 
   namedWindow( window_name, CV_WINDOW_AUTOSIZE );
 
-  load_config();
+  if(load_config() == -1)
+  {
+      return -1; 
+  }
   /// Create Trackbars
   createTrackbar( "Radius(lower limit)", window_name, 
                   &minRadius, 
